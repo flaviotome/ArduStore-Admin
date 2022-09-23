@@ -1,0 +1,25 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.example-container > * {
+  width: 100%;
+
+}
+
+#txt-desc{
+  height: 100px;
+}
+
+.div-buttons{
+  display: flex;
+  width: 100%;
+}
+
+.button{
+ width: 45%;
+ margin-left: auto;
+ margin-right: auto;
+}

@@ -1,0 +1,26 @@
+.example-container{
+  height: 90%;
+  align-items: center;
+}
+
+.mat-toolbar{
+  height: 10%;
+}
+.sidenav{
+  background-color: #2D4B73;
+  width: 200px;
+}
+
+.mat-list-icon{
+  color: #4951F2;
+}
+
+
+.mat-list-item span{
+  color: white;
+  font-weight: bold;
+}
+.mat-list-item :hover{
+  cursor: pointer;
+  color: #4951F2;
+}

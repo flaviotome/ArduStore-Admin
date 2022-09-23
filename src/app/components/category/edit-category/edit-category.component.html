@@ -1,0 +1,22 @@
+<div class="example-container">
+  <h1>Criar Nova Categoria de Produto</h1>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Nome da Categoria"
+      [(ngModel)]="category.categoryName"
+    />
+  </mat-form-field>
+
+  <div class="div-buttons">
+    <button class="button" mat-raised-button color="primary">Save</button>
+    <button
+      class="button"
+      mat-raised-button
+      color="accent"
+      routerLink="/category"
+    >
+      Cancel
+    </button>
+  </div>
+</div>

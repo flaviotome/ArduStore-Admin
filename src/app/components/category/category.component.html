@@ -1,0 +1,41 @@
+<div class="example-container mat-elevation-z8">
+  <h1>Lista das Categorias de Produtos</h1>
+  <mat-table #table [dataSource]="dataSource">
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.categoryName }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef> Gerenciar </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-button>
+          <mat-icon color="primary" routerLink="/category/{{ element._id }}"
+            >edit</mat-icon
+          >
+        </button>
+
+        <button mat-button color="accent" (click)="deleteCategory(element._id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+
+  <button
+    class="button"
+    mat-raised-button
+    color="primary"
+    routerLink="/category/newcategory"
+  >
+    Nova Categoria
+  </button>
+</div>

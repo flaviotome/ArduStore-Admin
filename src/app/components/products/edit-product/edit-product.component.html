@@ -1,0 +1,48 @@
+<div class="example-container">
+  <h1>Editar Produto</h1>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Nome do produto"
+      [(ngModel)]="product.productName"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Preço" [(ngModel)]="product.productPrice" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea
+      id="txt-desc"
+      matInput
+      placeholder="Descrição"
+      [(ngModel)]="product.productDescription"
+    ></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Category" [(ngModel)]="product.productType">
+      <mat-option *ngFor="let cat of categoriesDropDownData" [value]="cat._id">
+        {{ cat.categoryName }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Imagem" [(ngModel)]="product.productImg" />
+  </mat-form-field>
+</div>
+
+<div class="div-buttons">
+  <button
+    class="button"
+    mat-raised-button
+    color="primary"
+    (click)="updateProduct()"
+  >
+    Save
+  </button>
+  <button class="button" mat-raised-button color="accent" routerLink="/">
+    Cancel
+  </button>
+</div>

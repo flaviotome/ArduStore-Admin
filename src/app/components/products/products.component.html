@@ -1,0 +1,50 @@
+<div class="example-container mat-elevation-z8">
+  <h1>Lista de Produtos Cadastrados</h1>
+  <mat-table #table [dataSource]="dataSource">
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="image">
+      <mat-header-cell *matHeaderCellDef> Produto </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <img class="table-product-img" src="{{ element.productImg }}" />
+      </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.productName }} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef> Preço </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.productPrice }}
+      </mat-cell>
+    </ng-container>
+    <!-- Weight Column -->
+    <ng-container matColumnDef="type">
+      <mat-header-cell *matHeaderCellDef> Categoria </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.productType.categoryName }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef> Gerenciar </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-button color="primary">
+          <mat-icon routerLink="/product/{{ element._id }}">edit</mat-icon>
+        </button>
+
+        <button mat-button color="accent"><mat-icon>delete</mat-icon></button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>
